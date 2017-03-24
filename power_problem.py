@@ -111,13 +111,14 @@ for line in reader2:
 #going through zip code list and list of high/low res. rates and seeing what zip codes are in each list, and from there finding the city names.
 abc = []
 xyz = []
-for i in range(len(zip_codes)):
+for i in range(len(zip_codes)-1):
     for j in range(len(low)):
-        if low[j] == zip_codes[i][0]:     # I dont know why its not working
+        if low[j] == zip_codes[i][0]:     
             abc.append(zip_codes[i][2])
     for k in range(len(high)):
         if high[k] == zip_codes[i][0]:
             xyz.append(zip_codes[i][2])
+
 
 print("the cities with the lowest resedential rate are:", abc)
 print("the cities with the highest resedential rate are:", xyz)
