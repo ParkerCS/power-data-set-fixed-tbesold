@@ -113,7 +113,7 @@ abc = []
 xyz = []
 for i in range(len(zip_codes)-1):
     for j in range(len(low)):
-        if low[j] == zip_codes[i][0]:     
+        if low[j] == zip_codes[i][0]:
             abc.append(zip_codes[i][2])
     for k in range(len(high)):
         if high[k] == zip_codes[i][0]:
@@ -127,6 +127,34 @@ print("the cities with the highest resedential rate are:", xyz)
 
 #FOR #4  CHOOSE ONE OF THE FOLLOWING TWO PROBLEMS. The first one is easier than the second.
 #4  (Easier) USING ONLY THE ZIP CODE DATA... Make a scatterplot of all the zip codes in Illinois according to their Lat/Long.  Make the marker size vary depending on the population contained in that zip code.  Add an alpha value to the marker so that you can see overlapping markers.
+
+
+
+import matplotlib.pyplot as plt
+import random
+
+
+xval = []
+yval = []
+color_list = []
+size_list = []
+
+#adding all the longitudes and lattitudes to lists
+new = zip_codes[1:]
+for i in range(len(new)-1):
+    xval.append(str(new[i][5]))
+    yval.append(new[i][6])
+
+#setting the size so higher population will be bigger
+    try:
+        size = float(new[i][10]) / 75
+    except:
+        size = 35
+
+    size_list.append(size)
+
+my_scatterplot = plt.scatter(xval, yval, s = size_list)  #the color and size at the back are how you set the color and size
+
 
 
 
