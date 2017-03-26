@@ -35,7 +35,7 @@ print(power)
 #making a list of all zip codes and of all the resedential rates
 zip_list = []
 res_list = []
-for i in range(len(power)):
+for i in range(len(power)-1):
     zip = power[i][0]
     res = power[i][8]
     zip_list.append(zip)
@@ -53,7 +53,7 @@ print("the average residential rate in my zipcode is", res_list[zip_index])
 illinois = []
 
 #creating a list of illinois bundled res. rates
-for i in range(len(power)):
+for i in range(len(power)-1):
     if power[i][3] == 'IL' and power[i][4] == 'Bundled':
         illinois.append(power[i])
 
@@ -63,7 +63,7 @@ for i in range(len(illinois)):
     sorted.append(illinois[i][8])
 
 #sorting by res. rate
-for pos in range(len(sorted)):
+for pos in range(len(sorted)-1):
     min_pos= pos
     for scan_pos in range(min_pos, len(sorted)):
         if sorted[scan_pos] < sorted[min_pos]:
@@ -92,7 +92,7 @@ lowest_res = illinois[0][8]
 low = []
 highest_res = illinois[-1][8]
 high = []
-for i in range(len(illinois)):
+for i in range(len(illinois)-1):
     if illinois[i][8] == lowest_res:
         low.append(illinois[i][0])
     if illinois[i][8] == highest_res:
