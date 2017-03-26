@@ -105,7 +105,6 @@ reader2 = csv.reader(file2, delimiter=',')
 for line in reader2:
     zip_codes.append(line)
 
-#print(zip_codes)
 
 
 #going through zip code list and list of high/low res. rates and seeing what zip codes are in each list, and from there finding the city names.
