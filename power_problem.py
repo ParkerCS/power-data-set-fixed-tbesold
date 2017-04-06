@@ -140,21 +140,26 @@ size_list = []
 
 #adding all the longitudes and lattitudes to lists
 new = zip_codes[1:]
-for i in range(len(new)-1):
-    xval.append(str(new[i][5]))
-    yval.append(new[i][6])
-
-#setting the size so higher population will be bigger
+print(new)
+for i in range(len(new)):
     try:
-        size = float(new[i][10]) / 75
+        xval.append(float(new[i][5].strip()))
+        yval.append(float(new[i][6].strip()))
+        try:
+            size_list.append(float(new[i][10]) / 75)
+        except:
+            size_list.append(30)
+
+        print("success")
     except:
-        size = 35
-
-    size_list.append(size)
-
-my_scatterplot = plt.scatter(xval, yval, s = size_list)  #the color and size at the back are how you set the color and size
+        pass
 
 
+
+
+my_scatterplot = plt.scatter(yval, xval, s=size_list)  #the color and size at the back are how you set the color and size
+
+plt.show()
 
 
 
